@@ -31,6 +31,7 @@ const LogMeIn = ({setToken, setUserId}) => {
                     const userId = await getUserId(token);
                     setUserId(userId);
                     localStorage.setItem("token", token);
+                    localStorage.setItem("userID", userId);
                     setUsername("");
                     setPassword("");
                     };

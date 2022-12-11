@@ -29,7 +29,14 @@ const Posts = ({posts, setPosts, token, userId}) => {
     const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
-        <>
+        <div className="portside">
+            <input
+                className="search"
+                placeholder="Search for posts by Title"
+                value={searchTerm}
+                type="text"
+                onChange={(e) => setSearchTerm(e.target.value)}
+            ></input>
             <div className="posts-container">
                 {filteredPosts.map(posts => (
                 <div key={posts._id} className="single-item-card">
@@ -46,7 +53,7 @@ const Posts = ({posts, setPosts, token, userId}) => {
                                     console.log(posts._id);
                                     deletePost(token, posts._id, setPosts);
                                 }}>
-                                    <button type="submit">Delete Post</button>
+                                    <button className="deletebutton" type="submit">Delete Post</button>
                                 </form>
                             }
                             { ((token) && (userId !== posts.author._id && postId !== posts._id)) &&
@@ -78,14 +85,9 @@ const Posts = ({posts, setPosts, token, userId}) => {
                 </div>
                 ))}
            
-            <input
-                className="search"
-                placeholder="Search for posts by Title"
-                value={searchTerm}
-                type="text"
-                onChange={(e) => setSearchTerm(e.target.value)}
-            ></input></div>
-         </>
+
+            </div>
+         </div>
     )
 }
 

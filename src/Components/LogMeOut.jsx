@@ -7,6 +7,7 @@ const LogMeOut = ({token, setToken}) => {
             <button className="logout-button" type="logout" onClick={(()=>{
                 try {
                     localStorage.removeItem('token');
+                    localStorage.removeItem('userID');
                     setToken(null);
                 } catch (error) {
                     console.error(error);

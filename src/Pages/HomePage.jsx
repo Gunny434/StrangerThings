@@ -11,19 +11,21 @@ const Home = ({token, posts, setPosts, userId, setToken}) => {
             token={ token } 
             setToken={ setToken }/>
     }
-        <Posts 
-            token={ token } 
-            posts={ posts } 
-            setPosts={ setPosts }
-            userId={ userId }
-        />
-    { token &&
-        <PostForm 
-            token={ token } 
-            posts={ posts } 
-            setPosts={ setPosts }
-        />
-    }
+    <div className="post-and-form">
+        { token &&
+            <PostForm 
+                token={ token } 
+                posts={ posts } 
+                setPosts={ setPosts }
+            />
+        }
+            <Posts 
+                token={ token } 
+                posts={ posts } 
+                setPosts={ setPosts }
+                userId={ userId }
+            />
+    </div>
     </>
   );
 };

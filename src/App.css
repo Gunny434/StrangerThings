@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 #root {
-  max-width: 1280px;
+  max-width: 1480px;
   margin: 0 auto;
+}
+
+.STLOGO {
+  font-size: 36px;
+  font-weight: bolder;
+  font-family: 'Oswald', sans-serif;
+  float: right;
+  margin-top: 0;
+  color: darkblue;
 }
 
 .logo {
@@ -34,15 +45,19 @@
   color: #888;
 }
 
-
-.logout-bar{
-
+.post-and-form {
+  display: flex;
+  flex-direction: row-reverse;
 }
-.logout-button{
 
+.portside {
+  display: flex;
+  flex-direction: column;
+  float: left;
 }
+
 .seller{
-  font-size: 40px;
+  font-size: 24px;
   font-weight: bolder;
 }
 .single-item-card{
@@ -50,16 +65,17 @@
   justify-content: space-evenly;
   text-align: center;
   padding: 0;
-  margin: auto;
+  margin: 16px;
   list-style: none;
-  flex-shrink: 1;
+  flex: 1 1 25%;
   border: black 2px solid;
-  flex-basis: 100%;
   flex-direction: column;
   margin-bottom: 2rem;
+  width: 60px;
+  border-radius: 2%;
 }
 .post-title{
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 2rem;
 }
@@ -73,29 +89,43 @@ input{
   margin-right: 2rem;
 }
 .posts-container{
- 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1200px;
+  float: left;
 }
 .search{
 top: 0rem;
-margin: auto;
+margin: 16px;
 height: 3rem;
+width: 1160px;
 font-size: 20px;
 text-align: center;
+float: center;
 }
 
-#submit-form-container{
-  top: 0px;
-  width: 40px;
-  text-align: left;
-  font-weight: bold;
-  float: right;
+.submit-form-container{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 0;
 }
 
-.submitForm{
-  
+.submitForm input {
+  align-content: center;
 }
+
+.input {
+  width: 200px;
+}
+
+.deletebutton {
+  background-color: darkred;
+}
+
 input{
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
 }
 button{
   margin-bottom: 2rem;
@@ -110,7 +140,6 @@ p{
 a:hover{
   transform: scale(1.1);
   transition: ease;
-
 }
 a{
   padding: 1rem;

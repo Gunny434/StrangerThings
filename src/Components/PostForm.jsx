@@ -36,15 +36,21 @@ const PostForm = (token, posts, setPosts) => {
     return (
       <div id='submit-form-container'>
         <form className="submitForm" onSubmit={handleSubmit}>
-          <label htmlFor='title'>Item Name:</label>
+          <label className="postLabel" htmlFor='title'>Item Name:</label>
           <input className="input" type='text' name='title' value={title} onChange={(event) => setTitle(event.target.value)} />
-          <label htmlFor='desc'>Description:</label>
+          <br/>
+          {/* We are aware that <br/> is bad practice but due to time constraints this is the most convenient option. */}
+          <label className="postLabel" htmlFor='desc'>Description:</label>
           <input className="input" type='text' name='description' value={desc} onChange={(event) => setDesc(event.target.value)}/>
-          <label htmlFor='price'>Price:</label>
+          <br/>
+          <label className="postLabel" htmlFor='price'>Price:</label>
+          <br/>
           <input className="input" type='text' name='price' value={price} onChange={(event) => setPrice(event.target.value)}/>
-          <label htmlFor='price'>Location (Optional):</label>
+          <br/>
+          <label className="postLabel" htmlFor='price'>Location (Optional):</label>
           <input className="input" type='text' name='location' value={location} onChange={(event) => setLocation(event.target.value)}/>
-          <button className="input"  type='submit'>Submit</button>
+          <br/>
+          <button type='submit'>Submit</button>
         </form>
       </div>
     )

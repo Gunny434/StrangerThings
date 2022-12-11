@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { getUserId } from "./api/auth";
 
 import Home from "./Pages/HomePage";
 import Profile from "./Pages/Profile";
@@ -17,9 +18,13 @@ function App() {
     setToken(localStorage.token);
   };
 
+  if (localStorage.userID && !userId) {
+    setUserId(localStorage.userID);
+  };
+
   return (
     <div className="App">
-      <div>Under Construction, check back soon...</div>
+      <h1 className="STLOGO">Stranger's Things</h1>
       <Navbar token={ token }/>
       <Routes>
         <Route path='/' 
